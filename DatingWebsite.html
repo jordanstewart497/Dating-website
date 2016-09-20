@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" style="font: 90%/1.3 arial">
+<head> <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
+
+             rel="stylesheet" type="text/css" />
+
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Dating Site</title>
+
+    <!-- For Website's Design:-->
+    <style>
+        article, aside, figure, footer, header, menu, nav, section {display: block;}
+        label {display:inline-block; width: 180px; text-align: right}
+        fieldset {border-color: yellow; background-color: lightyellow; border-width: 10px; border-style: solid; width: 720px; }
+        textarea {width: 360px; height: 50px}
+        label:hover {font-size: 40px}
+        .sliderlabel1 {text-align:center; background-color: red; color: white}
+        .sliderlabel2 {text-align: center; background-color: purple; color: white}
+        .slider {text-align: center; row-span: 2}
+    </style>
+</head>
+<body>
+<header>
+    <h1>Please Enter Your Details For Our Dating Website!</h1>
+</header>
+<form>
+
+   <!-- For face:-->
+    <fieldset>
+        <legend>Your Face</legend>
+        <table>
+            <tr>
+                <td >
+                    <label for="file">Your Image:</label>
+                    <input type="file" required id="file" onchange="readURL(this)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="preview">Image Preview:</label>
+                    <img id="preview" src="#" alt="Your Image">
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <!-- For General Details:-->
+    <fieldset>
+        <legend>Your General Details</legend>
+        <table>
+            <tr>
+                <td>
+                    <label for="name" width="auto">Name:</label>
+                    <input type="text" required id="name" placeholder="Your full name">
+                </td>
+            </tr>
+            <tr>
+            <tr>
+                <label for="female" width="auto">Gender:</label>
+                <input type="radio" required id="female" name="gender">
+                Male
+                <input type="radio" required id="male" name="gender">
+                Female
+            </tr>
+            <tr>
+                <td>
+                    <label for="age">Age:</label>
+                    <input type="number" required id="age">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="dob">Date of birth:</label>
+                    <input type="date" id="dob">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="fc">Favorite color:</label>
+                    <input type="color" id="fc">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="country">Which country:</label>
+                    <select id="country" required>
+                        <option></option>
+                        <option value="cn">Canada</option>
+                        <option value="fr">France</option>
+                        <option value="mx">Mexico</option>
+                        <option value="rs">Russia</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="us">United States</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    <!-- For Your Indicators:-->
+    <fieldset>
+        <legend>Your Indicators</legend>
+        <table>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td><label for="height">Height:</label></td>
+                        </tr>
+                        <tr>
+                            <td><label for="salary">Salary:</label></td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="sliderlabel1" id="sliderlabel1">
+                    Short
+                    <br>
+                    Poor
+                </td>
+                <td class="slider">
+                    <input type="range" min="0" max="100" id="height">
+                    <br>
+                    <input type="range" min="0" max="100" id="salary">
+                </td>
+                <td class="sliderlabel2" id="sliderlabel2">
+                    Tall
+                    <br>
+                    Rich
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <!-- For Contact Information:-->
+    <fieldset>
+        <legend>Your Contact Information</legend>
+        <table>
+            <tr>
+                <td>
+                    <label for="email">Email:</label>
+                    <input type="email" required id="email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="mobile">Mobile:</label>
+                    <input type="tel" id="mobile">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="Address" align="top"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email2">Method to contact you:</label>
+                    <input type="checkbox" id="email2">
+                    Email
+                    <input type="checkbox" id="whatsapp">
+                    Whatsapp
+                    <input type="checkbox" id="app">
+                    In-app chat
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    <input type="submit">
+</form>
+
+<!-- For rendering image preview:-->
+<script type="text/javascript">
+
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+
+                $('#preview')
+
+                        .attr('src', e.target.result)
+
+                        .width(150)
+
+                        .height(200);
+
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+        }
+
+    }
+
+</script>
+</body>
+</html>
